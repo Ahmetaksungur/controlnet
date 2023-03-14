@@ -15,14 +15,14 @@ pipe = StableDiffusionControlNetPipeline.from_pretrained(
 
 pipe.enable_attention_slicing()
 generator = torch.Generator(device="cuda").manual_seed(-1)
-prompt = "Space station, pro photography, RAW photo, 8k uhd, dslr, soft lighting, high quality, film grain, Fujifilm XT3"
+prompt = "minimalistic cyberpunk kitchen, interior, zaha hadid, wood finish, render, 8k, photorealistic, 3ds max"
 
 image = pipe(
     prompt,
     width=1200,
     height=600,
     generator=generator,
-    image=Image.open("test.jpeg"),
+    image=Image.open("test1.jpeg"),
     num_inference_steps=50
 ).images[0]
 
